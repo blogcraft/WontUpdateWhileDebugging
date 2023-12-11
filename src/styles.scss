@@ -1,0 +1,117 @@
+@import "normalize.css/normalize.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./app-theme";
+
+:root {
+  --darkHover: #666666;
+  --lightHover: #d7d7d7;
+}
+
+.app-theme {
+  .row-hover:hover {
+    cursor: pointer !important;
+  }
+
+  .example-element-row:hover {
+    cursor: pointer !important;
+  }
+}
+
+.app-dark-theme {
+  @extend .app-theme;
+
+  .example-expanded-row {
+    background: var(--darkHover);
+  }
+
+  .row-expanded {
+    background: var(--darkHover) !important;
+  }
+}
+
+.app-light-theme {
+  @extend .app-theme;
+
+  .example-expanded-row {
+    background-color: var(--lightHover);
+  }
+
+  .row-expanded {
+    background: var(--lightHover) !important;
+  }
+}
+
+.mat-form-field-prefix,
+.mat-form-field-suffix {
+  display: inline-flex;
+  align-items: center;
+}
+
+@media only screen and (min-height: 601px) {
+  .global-height-fix {
+    max-height: calc(100vh - 243px);
+  }
+
+  .global-height-virtualscroll-fix {
+    height: calc(100vh - 243px);
+  }
+
+  .global-height-fix-1 {
+    max-height: calc(100vh - 277px);
+  }
+
+  .global-height-virtualscroll-fix-1 {
+    height: calc(100vh - 277px);
+  }
+
+  .global-height-fix-2 {
+    max-height: calc(100vh - 323px);
+  }
+
+  .global-height-virtualscroll-fix-2 {
+    height: calc(100vh - 323px);
+  }
+
+  .global-height-fix-3 {
+    max-height: calc(100vh - 375px);
+  }
+
+  .global-height-virtualscroll-fix-3 {
+    height: calc(100vh - 375px);
+  }
+
+  .global-height-virtualscroll-dash {
+    height: calc(256px);
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .global-height-virtualscroll-fix,
+  .global-height-virtualscroll-fix-1,
+  .global-height-virtualscroll-fix-2,
+  .global-height-virtualscroll-fix-3 {
+    height: 400px;
+  }
+
+  .global-height-virtualscroll-dash {
+    height: calc(256px);
+  }
+
+  .global-height-fix {
+    max-height: 400px;
+  }
+}
+
+.global-height-dash {
+  height: calc(256px);
+}
+
+.global-height-dash-lg {
+  height: calc(333px);
+}
+
+.global-height-dash-xl {
+  height: calc(500px);
+}

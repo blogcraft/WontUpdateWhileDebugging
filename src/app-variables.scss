@@ -1,0 +1,150 @@
+@use "@angular/material" as mat;
+
+$md-primary-light: (
+  50: #f0e6e4,
+  100: #dbbfbb,
+  200: #c3958e,
+  300: #aa6b61,
+  400: #984b3f,
+  500: #862b1d,
+  600: #7e261a,
+  700: #732015,
+  800: #691a11,
+  900: #56100a,
+  A100: #ff918b,
+  A200: #ff6258,
+  A400: #ff3225,
+  A700: #ff1a0b,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$md-accent-light: (
+  50: #090908,
+  100: #f2d4bf,
+  200: #e9b795,
+  300: #e09a6a,
+  400: #d9844a,
+  500: #d26e2a,
+  600: #cd6625,
+  700: #c75b1f,
+  800: #c15119,
+  900: #b63f0f,
+  A100: #ffeae4,
+  A200: #ffc4b1,
+  A400: #ff9e7e,
+  A700: #ff8a64,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-primary-dark: (
+  50: #f0e6e4,
+  100: #dbbfbb,
+  200: #c3958e,
+  300: #aa6b61,
+  400: #984b3f,
+  500: #862b1d,
+  600: #7e261a,
+  700: #732015,
+  800: #691a11,
+  900: #56100a,
+  A100: #ff918b,
+  A200: #ff6258,
+  A400: #ff3225,
+  A700: #ff1a0b,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$md-accent-dark: (
+  50: #faeee5,
+  100: #f2d4bf,
+  200: #e9b795,
+  300: #e09a6a,
+  400: #d9844a,
+  500: #d26e2a,
+  600: #cd6625,
+  700: #c75b1f,
+  800: #c15119,
+  900: #b63f0f,
+  A100: #ffeae4,
+  A200: #ffc4b1,
+  A400: #ff9e7e,
+  A700: #ff8a64,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$app-theme-primary-light: mat.define-palette($md-primary-light, 500, 300, 900);
+$app-theme-accent-light: mat.define-palette($md-accent-light, 500, 300, 900);
+
+$app-theme-primary-dark: mat.define-palette($md-primary-dark, 500, 300, 900);
+$app-theme-accent-dark: mat.define-palette($md-accent-dark, 500, 300, 900);
+
+$app-theme-warn: mat.define-palette(mat.$red-palette);
+$foreground: map-get($app-theme-primary-light, foreground);
+
+$primary-light: mat.get-color-from-palette($app-theme-primary-light);
+$accent-light: mat.get-color-from-palette($app-theme-accent-light);
+
+$primary-dark: mat.get-color-from-palette($app-theme-primary-dark);
+$accent-dark: mat.get-color-from-palette($app-theme-accent-dark);
+
+$warn: mat.get-color-from-palette($app-theme-warn);

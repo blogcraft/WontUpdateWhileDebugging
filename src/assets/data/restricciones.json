@@ -1,0 +1,112 @@
+[
+  {
+    "idRestriccion": 0,
+    "nombre": "string",
+    "tipoCartera": "Global",
+    "tipo": "string",
+    "claseRestriccion": "string",
+    "valorInicial": "0",
+    "valorFinal": "1000",
+    "estado": true,
+    "claseActivo": "string",
+    "evaluacionNominal": true,
+    "cajaNumerador": false,
+    "ratio": {
+      "numerador": [
+        {
+          "atributo": "CARTERA",
+          "hijos": [
+            {
+              "atributo": "Conjunto",
+              "descripcion": "Descripción",
+              "limInicial": 0,
+              "limFinal": 100,
+              "hijos": []
+            },
+            {
+              "atributo": "Clase Activa",
+              "descripcion": "Descripción",
+              "limInicial": 0,
+              "limFinal": 100,
+              "hijos": []
+            }
+          ]
+        }
+      ],
+      "denominador": [
+        {
+          "atributo": "DENOMINADOR",
+          "hijos": [
+            {
+              "atributo": "Cartera",
+              "seleccionado": true
+            },
+            {
+              "atributo": "Activo (Cartera + Caja + Cuentas x Cobrar)",
+              "seleccionado": false
+            },
+            {
+              "atributo": "Patrimonio (Activo - Cuentas x Pagar)",
+              "seleccionado": false
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "idRestriccion": 1,
+    "nombre": "string",
+    "tipoCartera": "Modelo",
+    "tipo": "string",
+    "claseRestriccion": "string",
+    "valorInicial": "0",
+    "valorFinal": "1000",
+    "estado": true,
+    "claseActivo": "string",
+    "evaluacionNominal": false,
+    "cajaNumerador": true,
+    "ratio": {
+      "numerador": [
+        {
+          "atributo": "CARTERA",
+          "hijos": [
+            {
+              "atributo": "Conjunto",
+              "descripcion": "Descripción",
+              "limInicial": 0,
+              "limFinal": 80,
+              "hijos": []
+            },
+            {
+              "atributo": "Clase Activa",
+              "descripcion": "Descripción",
+              "limInicial": 0,
+              "limFinal": 90,
+              "hijos": []
+            }
+          ]
+        }
+      ],
+      "denominador": [
+        {
+          "atributo": "DENOMINADOR",
+          "hijos": [
+            {
+              "atributo": "Cartera",
+              "seleccionado": true
+            },
+            {
+              "atributo": "Activo (Cartera + Caja + Cuentas x Cobrar)",
+              "seleccionado": true
+            },
+            {
+              "atributo": "Patrimonio (Activo - Cuentas x Pagar)",
+              "seleccionado": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ]
+      },
+      "policy": {
+        "default-src": "'self'",
+        "connect-src": "'self' https://fonts.googleapis.com 'nonce-PQWLNDJGYROASLNCNGKSD'",
+        "base-uri": "'self'",
+        "font-src": "'self' https://fonts.gstatic.com",
+        "style-src": "'self' 'unsafe-inline'",
+        "style-src-elem": "'self' 'nonce-PQWLNDJGYROASLNCNGKSD'",
+        "script-src": "'self' 'nonce-PQWLNDJGYROASLNCNGKSD' 'unsafe-inline'",
+        "frame-ancestors": "'none'",
+        "form-action": "'self'",
+        "object-src": "'none'"
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+        ]
+      }
+    }
+  ]
+}

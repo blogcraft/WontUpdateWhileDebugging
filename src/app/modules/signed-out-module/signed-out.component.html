@@ -1,0 +1,24 @@
+<div style="width: 100%; height: 100%; position: fixed" class="app-light-theme">
+  <div class="bg bg-image"></div>
+  <div class="bg overlay"></div>
+  <div
+    class="h-full w-full flex-col content-center items-center justify-between"
+  >
+    <mat-toolbar color="primary">
+      <a mat-button>
+        <img class="logo" src="assets/img/logo-negativo.svg" alt="Logo" />
+      </a>
+    </mat-toolbar>
+    <section
+      class="flex flex-col h-full w-full content-center items-center justify-center"
+    >
+      <h1 class="text-white font-bold">{{ tituloPagina }}</h1>
+      <mat-card appearance="outlined" class="w-full md:w-fit">
+        <mat-card-content>
+          <router-outlet> </router-outlet>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </div>
+</div>
+<div class="version">v {{ v.version }}</div>

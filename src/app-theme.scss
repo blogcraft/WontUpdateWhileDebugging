@@ -1,0 +1,195 @@
+@use "@angular/material" as mat;
+
+@include mat.all-component-typographies();
+
+@include mat.core();
+
+@import "./app-variables";
+
+$my-typography: mat.define-typography-config(
+  $font-family: "Roboto",
+);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$app-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $app-theme-primary-light,
+      accent: $app-theme-accent-light,
+      warn: $app-theme-warn,
+    ),
+    typography: $my-typography,
+    density: 0,
+  )
+);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$app-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $app-theme-primary-dark,
+      accent: $app-theme-accent-dark,
+      warn: $app-theme-warn,
+    ),
+    typography: $my-typography,
+    density: 0,
+  )
+);
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+@mixin color($color) {
+  color: $color !important;
+}
+
+@mixin background-color($color) {
+  background-color: $color !important;
+}
+
+@mixin border-left($color) {
+  border-left: 7px solid $color !important;
+}
+
+@include mat.all-component-typographies($my-typography);
+@include mat.all-component-themes($app-light-theme);
+
+@mixin app-light-theme($theme) {
+  .ngx-charts {
+    text {
+      fill: mat.get-color-from-palette(
+        map-get($theme, foreground),
+        text
+      ) !important;
+    }
+  }
+
+  .mat-mdc-option .mdc-list-item__primary-text {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .logo-app {
+    content: url("/assets/img/logo-normal.svg");
+  }
+
+  .logo-uaf {
+    content: url("/assets/img/logo-UAF-normal.svg");
+  }
+
+  .logo-sii {
+    content: url("/assets/img/logo-sii-normal.svg");
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .active {
+    @include color($accent-light);
+  }
+
+  .warn {
+    @include color($warn);
+  }
+
+  .accent {
+    @include color($accent-light);
+  }
+
+  .fondo {
+    @include background-color($primary-light);
+  }
+
+  .mat-mdc-card-title {
+    @include border-left($accent-light);
+  }
+}
+
+.app-light-theme {
+  @include app-light-theme($app-light-theme);
+}
+
+@mixin app-dark-theme($theme) {
+  @include mat.all-component-colors($theme);
+
+  .ngx-charts {
+    text {
+      fill: mat.get-color-from-palette(
+        map-get($theme, foreground),
+        text
+      ) !important;
+    }
+  }
+
+  .mat-mdc-option .mdc-list-item__primary-text {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .logo-app {
+    content: url("/assets/img/logo-negativo.svg");
+  }
+
+  .logo-uaf {
+    content: url("/assets/img/logo-UAF-negativo.svg");
+  }
+
+  .logo-sii {
+    content: url("/assets/img/logo-sii-negativo.svg");
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .active {
+    @include color($accent-dark);
+  }
+
+  .warn {
+    @include color($warn);
+  }
+
+  .accent {
+    @include color($accent-dark);
+  }
+
+  .fondo {
+    @include background-color($primary-dark);
+  }
+
+  .mat-mdc-card-title {
+    @include border-left($accent-dark);
+  }
+}
+
+.app-dark-theme {
+  @include app-dark-theme($app-dark-theme);
+}
+
+@media (prefers-color-scheme: light) {
+  .app-auto-theme {
+    @include app-light-theme($app-light-theme);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .app-auto-theme {
+    @include app-dark-theme($app-dark-theme);
+  }
+}
